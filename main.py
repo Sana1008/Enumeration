@@ -8,10 +8,10 @@ subdomains_path = os.path.join(script_dir, "subdomains.txt")
 sub_list = open(subdomains_path).read() 
 subdoms = sub_list.splitlines()
 
-target = input("Enter the target domain (e.g. example.com, example.org, etc.): ")
+# target = input("Enter the target domain (e.g. example.com, example.org, etc.): ")
 
 for sub in subdoms:
-    sub_domains = f"http://{sub}.{target}" 
+    sub_domains = f"http://{sub}.{sys.argv[1]}" 
 
     try:
         requests.get(sub_domains)
